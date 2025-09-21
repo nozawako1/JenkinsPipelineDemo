@@ -48,7 +48,7 @@ pipeline {
                     credentialsId: 'MyAWS',
                     accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                     secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]){
-                        sh(script: 'aws s3 cp FilePath(FROM) S3ProdPath(TO)')
+                        sh(script: 'aws s3 cp var/lib/jenkins/workspace/JenkinsPipeline/index.html s3://test-env-jenkins-nk0906/')
                 }
             }
         }
