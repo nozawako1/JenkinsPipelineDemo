@@ -31,7 +31,7 @@ pipeline {
                     def url = 'https://test-env-jenkins-nk0906.s3.ap-northeast-1.amazonaws.com/index.html'
                     def response = sh(script: "curl -s -o /dev/null -w '%{http_code}' '$url'", returnStdout: true)
 
-                    if (response != '200') {
+                    if (response == '200') {
                         echo 'Test OK'
                     } else {
                         echo response
